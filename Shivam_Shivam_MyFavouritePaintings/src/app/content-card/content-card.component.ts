@@ -1,11 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentList } from '../helper-files/content-list';
 
+import { Component, Input } from '@angular/core';
+import { Content } from './content';
+
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',
   styleUrls: ['./content-card.component.css']
 })
+export class ContentCardComponent {
+  @Input() content: Content | undefined;
+
+  onImageClick(): void {
+    if (this.content) {
+      console.log('ID:', this.content.id);
+      console.log('Title:', this.content.title);
+    }
+  }
+}
 export class ContentCardComponent implements OnInit {
   contentList: ContentList = new ContentList();
 

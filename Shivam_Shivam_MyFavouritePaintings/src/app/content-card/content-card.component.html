@@ -1,1 +1,11 @@
-<p>content-card works!</p>
+<div *ngFor="let content of contentArray; let first = first" class="content-card" [class.first-card]="first">
+  <app-content-card [content]="content"></app-content-card>
+</div>
+<div (click)="onImageClick()">
+  <h3>{{ content?.title }}</h3>
+  <img *ngIf="content?.image" [src]="content?.image" alt="Content Image" />
+  <p>{{ content?.description }}</p>
+  <p>Creator: {{ content?.creator }}</p>
+  <p *ngIf="content?.type">Type: {{ content?.type }}</p>
+  <p *ngIf="content?.tags?.length">Tags: {{ content?.tags.join(', ') }}</p>
+</div>
