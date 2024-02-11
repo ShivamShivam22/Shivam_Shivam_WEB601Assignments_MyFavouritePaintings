@@ -48,8 +48,59 @@ export class ContentCardComponent implements OnInit {
       type: '3'
     });
     console.log(this.contentList.content);
+    this.contentList.add({
+      id: 1,
+      title: 'The Scream',
+      description: 'Painting by Edvard Munch',
+      creator: 'Edvard Munch',
+      imgURL: 'Images/thescream.jpg',
+      type: '3'
+    });
+    console.log(this.contentList.content);
+    this.contentList.add({
+      id: 1,
+      title: 'The Scream',
+      description: 'Painting by Edvard Munch',
+      creator: 'Edvard Munch',
+      imgURL: 'Images/thescream.jpg',
+      type: '3'
+    });
+    console.log(this.contentList.content);
+    this.contentList.add({
+      id: 1,
+      title: 'The Scream',
+      description: 'Painting by Edvard Munch',
+      creator: 'Edvard Munch',
+      imgURL: 'Images/thescream.jpg',
+      type: '3'
+    });
+    console.log(this.contentList.content);
+    this.contentList.add({
+      id: 1,
+      title: 'The Scream',
+      description: 'Painting by Edvard Munch',
+      creator: 'Edvard Munch',
+      imgURL: 'Images/thescream.jpg',
+      type: '3'
+    });
+    console.log(this.contentList.content);
   }
-
+  
+  searchTitle: string = '';
+  searchResultExists: boolean = false;
+  searchResultMessage: string = '';
+  
+  searchContent() {
+    this.searchResultExists = false;
+    const foundContent = this.content.find(item => item.title === this.searchTitle);
+    if (foundContent) {
+      this.searchResultExists = true;
+      this.searchResultMessage = `Content with title "${this.searchTitle}" exists!`;
+    } else {
+      this.searchResultMessage = `Content with title "${this.searchTitle}" does not exist.`;
+    }
+  }
+  
   ngOnInit(): void {
   }
 }

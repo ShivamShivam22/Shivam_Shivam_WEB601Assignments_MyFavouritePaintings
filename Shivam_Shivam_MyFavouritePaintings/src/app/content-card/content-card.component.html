@@ -1,11 +1,29 @@
-<div *ngFor="let content of contentArray; let first = first" class="content-card" [class.first-card]="first">
-  <app-content-card [content]="content"></app-content-card>
-</div>
-<div (click)="onImageClick()">
-  <h3>{{ content?.title }}</h3>
-  <img *ngIf="content?.image" [src]="content?.image" alt="Content Image" />
-  <p>{{ content?.description }}</p>
-  <p>Creator: {{ content?.creator }}</p>
-  <p *ngIf="content?.type">Type: {{ content?.type }}</p>
-  <p *ngIf="content?.tags?.length">Tags: {{ content?.tags.join(', ') }}</p>
-</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content</title>
+  <link rel="stylesheet" href="content-card.component.css">
+</head>
+<body>
+  <div *ngFor="let content of contentArray; let first = first" class="content-card" [class.first-card]="first">
+    <app-content-card [content]="content"></app-content-card>
+  </div>
+  <div (click)="onImageClick()">
+    <h3>{{ content?.title }}</h3>
+    <img *ngIf="content?.image" [src]="content?.image" alt="Content Image" />
+    <p>{{ content?.description }}</p>
+    <p>Creator: {{ content?.creator }}</p>
+    <p *ngIf="content?.type">Type: {{ content?.type }}</p>
+    <p *ngIf="content?.tags?.length">Tags: {{ content?.tags.join(', ') }}</p>
+  </div>
+  <input type="text" [(ngModel)]="searchTitle" placeholder="Enter title">
+  <button (click)="searchContent()">Search</button>
+  <p [style.color]="searchResultExists ? 'green' : 'red'">{{ searchResultMessage }}</p>
+  
+
+  
+</body>
+</html>

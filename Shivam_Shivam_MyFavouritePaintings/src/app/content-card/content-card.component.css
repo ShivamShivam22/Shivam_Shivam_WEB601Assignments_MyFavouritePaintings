@@ -8,4 +8,18 @@
   .content-card.first-card {
     border: 2px solid #000;
   }
+  .content-card.type-a {
+    background-color: lightgreen;
+  }
+  
+  .content-card.type-b {
+    background-color: lightblue;
+  }
+  
+  .content-card.type-c {
+    background-color: lightcoral;
+  }
+  .highlight {
+    border: 2px solid yellow;
+  }
   
