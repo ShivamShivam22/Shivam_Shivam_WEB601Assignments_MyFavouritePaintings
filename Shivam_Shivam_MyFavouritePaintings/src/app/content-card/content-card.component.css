@@ -4,6 +4,9 @@
     padding: 10px;
     cursor: pointer;
   }
+  .content-card:hover {
+    text-decoration: underline;
+  }
   
   .content-card.first-card {
     border: 2px solid #000;
